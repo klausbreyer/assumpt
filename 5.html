@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assumption #5</title>
+    <link rel="stylesheet" href="lib/water.css/light.standalone.min.css" />
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+
+    <script type="text/javascript" src="lib/Tangle/Tangle.js"></script><!-- example -->
+    <link rel="stylesheet" href="lib/TangleKit/TangleKit.css" type="text/css">
+    <script type="text/javascript" src="lib/TangleKit/mootools.js"></script>
+    <script type="text/javascript" src="lib/TangleKit/sprintf.js"></script>
+    <script type="text/javascript" src="lib/TangleKit/BVTouchable.js"></script>
+    <script type="text/javascript" src="lib/TangleKit/TangleKit.js"></script>
+    <script type="text/javascript">
+
+        function setUpTangle() {
+            var tangle = new Tangle(document.getElementById("example"), {
+                initialize: function () {
+                    this.kb = 100;
+                    this.wh = 500;
+                    this.car = 152;
+                    this.views = 2;
+                },
+                update: function () {
+                    var cotwo = (this.wh / 1000) / (1024 * 1024) * this.kb * (this.views * 1000000);
+                    this.co2 = cotwo;
+                    this.km = cotwo / this.car * 1000;
+                }
+            });
+        }
+
+    </script>
+    <style>
+        .tk-input {}
+
+        .tk-output {
+            color: purple
+        }
+
+        .tk-fact {
+            color: green
+        }
+    </style>
+</head>
+
+<body onload="setUpTangle();" id="example">
+    <h1>Reactive Document Assumption Tool Demo</h1>
+    <p>This is the demo of an yet to be funded open source iniative. The goal is to have an editor with the ability to
+        model concrete behaviour and
+        recommendations on the foundation of existing, scientific, yet abstract facts about climate change.
+    </p>
+    <p>One main feature is, that sceptics can fiddle around with the numbers and adopt the assumptions to their
+        respective situation and their setup, <b>by just dragging the mouse over the numbers.</b> <br />This can help to
+        understand where there is a lot of leverage (and where it is not worth discussing).
+    </p>
+    <p>This version here is basically just a draft of what an outlet can look like. It is based on <a
+            href="https://github.com/worrydream/Tangle/tree/master/TangleKit" target="_blank">Tangle</a>, which works
+        ok for this use case. But what is needed most, is a user friendly editor to create and edit assumptions based on
+        scientific
+        facts, converted in the correct units. </p>
+    <button type="button" onclick="alert('This is just a demo, but thanks for the interest. ;) ');">➕
+        Create your own assumption</button>
+    <fieldset>
+        <h2>Assumption #5: <mark>Data avoidance</mark> over intense tracking and bloated library use.</h2>
+        <h3>Assumption</h3>
+
+        <ul>
+
+            <li> By being efficient with libraries and good code, you can reduce the size of a deployment on the web
+                by
+                <span data-var="kb" class="tk-input TKAdjustableNumber" data-min="2" data-max="1024">
+                    kb</span>.</li>
+            <li>If you have <span data-var="views" class="tk-input TKAdjustableNumber" data-min="1"
+                    data-max="10">.000.000 views</span> per month, and 1 GB data transfer costs <span data-var="wh"
+                    class="TKAdjustableNumber" data-min="100" data-max="900">Wh</span>
+                electricity, you save <span data-var="co2" class="tk-output" data-format="%.0f">kg CO₂</span> </li>
+        </ul>
+
+        <h3>Perspective</h3>
+        <p>Is that a lot? Is it little? Since a user can't do anything with the plain number, it makes sense to provide
+            some comparisons regarding the impact.</p>
+        <ul>
+            <li>
+                <span data-var="co2" class="tk-output" data-format="%.0f">kg CO₂</span> = Driving <span data-var="km"
+                    class="tk-output" data-format="%.0f">
+                    km</span> with a car (with <span data-var="car" class="tk-input TKAdjustableNumber" data-min="50"
+                    data-max="500">g CO₂</span> per km
+                of driving)
+            </li>
+        </ul>
+        <h3>Facts </h3>
+        <p>The system needs to provide some common denominators, because they are scientifically proven. So the user
+            does not have to research these basic facts again and again.</p>
+        <ul>
+            <li>
+                <a href="https://www.mdpi.com/2071-1050/10/7/2494">1GB data transfer consumes 0,5kWh = 500Wh of
+                    energy.</a>
+            </li>
+            <li>
+                <a
+                    href="https://www.eea.europa.eu/data-and-maps/indicators/overview-of-the-electricity-production-2/assessment-4">1kWh
+                    of energy produced by the current European
+                    electricity grid equals 0,295kg CO₂</a>
+            </li>
+            <li>
+                <a
+                    href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwid2-C8xtbpAhUJ-qQKHbodDsgQFjADegQIARAB&url=http%3A%2F%2Fwww.kba.de%2FDE%2FStatistik%2FFahrzeuge%2FNeuzulassungen%2FUmwelt%2F2010%2F2010_n_co2_emission_pdf.pdf%3F__blob%3DpublicationFile%26v%3D6&usg=AOvVaw1T6F6-n2MnPMWXGEo_El-f">In
+                    2010, the average value of emitted CO₂ of newly registered passenger cars was 151.7 g/km</a>
+            </li>
+        </ul>
+
+        <hr />
+        <button type="button">Fork</button>
+        <button type="button">Clone</button>
+        <button type="button">Vote</button>
+    </fieldset>
+
+    <h2>Discussion</h2>
+
+    <p>The discussion takes place publicly on Twitter by having a corresponding unique hashtag for each assumption.
+    </p>
+
+    <blockquote class="twitter-tweet">
+        <p lang="en" dir="ltr">Assumption #1. (This is just a developers test.)</p>&mdash; Klaus Breyer
+        (@klausbreyer)
+        <a href="https://twitter.com/klausbreyer/status/1265970790064959490?ref_src=twsrc%5Etfw">May 28, 2020</a>
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <footer>
+        <h2>About</h2>
+        <p>
+            This is Part of the <a href="https://stackpledge.org">Stack Pledge</a> initiative.
+        </p>
+    </footer>
+</body>
+
+</html>

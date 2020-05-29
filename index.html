@@ -44,28 +44,46 @@
         .tk-fact {
             color: green
         }
+
+
+        summary:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body onload="setUpTangle();" id="example">
-    <h1>Reactive Document Assumption Tool Demo</h1>
-    <p>This is the demo of an yet to be funded open source iniative. The goal is to have an editor with the ability to
-        model concrete behaviour and
-        recommendations on the foundation of existing, scientific, yet abstract facts about climate change.
-    </p>
-    <p>One main feature is, that sceptics can fiddle around with the numbers and adopt the assumptions to their
-        respective situation and their setup, <b>by just dragging the mouse over the numbers.</b> <br />This can help to
-        understand where there is a lot of leverage (and where it is not worth discussing).
-    </p>
-    <p>This version here is basically just a draft of what an outlet can look like. It is based on <a
-            href="https://github.com/worrydream/Tangle/tree/master/TangleKit" target="_blank">Tangle</a>, which works
-        ok for this use case. But what is needed most, is a user friendly editor to create and edit assumptions based on
-        scientific
-        facts, converted in the correct units. </p>
-    <button type="button" onclick="alert('This is just a demo, but thanks for the interest. ;) ');">➕
+
+    <details>
+        <summary>This is the demo of an yet to be funded open source iniative. <u>Read more.</u> </summary>
+        <p> The goal is to have an editor / platform with the
+            ability to communicate in models on the foundation of existing, scientific, yet abstract facts. In
+            comparison to
+            online communication in pure text, a model allows the reader to adapt it interactively and reactively <b>by
+                just dragging the mouse over the numbers.</b>
+        </p>
+        <p>This version here is basically just a draft of what the displayed model can look like and for what it could
+            be
+            used. It is based on <a href="https://github.com/worrydream/Tangle/tree/master/TangleKit"
+                target="_blank">Tangle</a>, which works
+            ok for this use case. But what is needed most, is an super user friendly editor to create and edit models
+            on the foundation of scientific facts and conversion of units. </p>
+        <p>The underlying belief is, that this can shape public discourse in a complex world (with challenges like
+            corona
+            and climate change), because it invites everyone to understand and work on the models (rather than opinions)
+            and
+            make their own assumptions (what moves the lever and what doesn't).
+        </p>
+
+    </details>
+
+    <hr />
+    <h1>Reactive Documents Assumption Tool Demo</h1>
+    <button type="button" onclick="alert('This is the part what is missing! But thanks for the click. ;) ');">➕
         Create your own assumption</button>
     <fieldset>
-        <h2>Assumption #5: <mark>Data avoidance</mark> over intense tracking and bloated library use.</h2>
+        <h2>Assumption #5: <mark>Data avoidance</mark> over intense tracking and bloated library usage saves a
+            significant amount of CO₂.</h2>
         <h3>Assumption</h3>
 
         <ul>
@@ -134,7 +152,7 @@
     <footer>
         <h2>About</h2>
         <p>
-            This is Part of the <a href="https://stackpledge.org">Stack Pledge</a> initiative.
+            This was born as a necessity of the <a href="https://stackpledge.org">Stack Pledge</a> initiative.
         </p>
     </footer>
 </body>
